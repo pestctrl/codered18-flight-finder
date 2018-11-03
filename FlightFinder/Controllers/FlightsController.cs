@@ -7,12 +7,19 @@ using Microsoft.AspNetCore.Mvc;
 namespace FlightFinder.Controllers
 {
     [Route("api/[controller]")]
-    public class SampleDataController : Controller
+    public class FlightsController : Controller
     {
-        [HttpGet("[action]")]
-        public JsonResult GetFlights(String start, String end)
+        [HttpPost("[action]")]
+            public JsonResult GetFlights(string start, string end)
         {
-            return Json();
+            return Json(new { success = true, message= "Hello, " + start + " to " + end + "!"});
+        }
+        
+
+        public class FlightRequest
+        {
+            public string start { get; set; }
+            public string end { get; set; }
         }
     }
 }
