@@ -7,7 +7,7 @@ export default class Searchbar2 extends React.Component {
         <Form>
           <FormGroup>
             <Label for="exampleSearch">Destination</Label>
-            <Input type="search" name="search" id="exampleSearch" placeholder="Searchbar2" />
+            <Input type="search" name="search" id="exampleSearch" placeholder="Where are you headed..." />
           </FormGroup>
         </Form>
       );

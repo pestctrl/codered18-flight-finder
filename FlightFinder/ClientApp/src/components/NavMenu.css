@@ -16,6 +16,7 @@
     .navbar {
         height: 100%;
         width: calc(25% - 20px);
+        background-image:url('https://cms.hostelworld.com/hwblog/wp-content/uploads/sites/2/2017/08/girlgoneabroad.jpg'); object-fit: cover;
     }
     .navbar {
         border-radius: 0;
