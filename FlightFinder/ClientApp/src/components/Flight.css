@@ -1,9 +1,8 @@
 .box{
     position: absolute;
-    width:1519px;
-    margin-left:0px;
+    width:calc(113.5%);
+    right: -1.5px;
     height:1200px;
-    border: 1px solid black;
     background-image:url('https://cms.hostelworld.com/hwblog/wp-content/uploads/sites/2/2017/08/girlgoneabroad.jpg'); object-fit: cover;
 }
 /* .background{

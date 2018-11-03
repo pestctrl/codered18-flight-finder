@@ -15,8 +15,8 @@
     /* On large screens, convert the nav menu to a vertical sidebar */
     .navbar {
         height: 100%;
-        width: calc(25% - 20px);
-        background-image:url('https://cms.hostelworld.com/hwblog/wp-content/uploads/sites/2/2017/08/girlgoneabroad.jpg'); object-fit: cover;
+        width: calc(15%);
+        color: #36454f;
     }
     .navbar {
         border-radius: 0;
