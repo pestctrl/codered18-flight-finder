@@ -32,17 +32,17 @@ export class Flight extends Component {
     return ( 
         <div>
             <Form className='box'>
-                <FormGroup>
-                    <Label for="exampleSearch">Start</Label>
+                <FormGroup className='move' className='col-md-8'>
+                    <Label for="exampleSearch">Origin</Label>
                     <Input type="search" name="search" id="exampleSearch" value={this.state.Searchbar} onChange={this.updateSearch1} placeholder="Searchbar1" />
                 </FormGroup>
-                <FormGroup>
+                <FormGroup className='move' className='col-md-8'>
                     <Label for="exampleSearch">Destination</Label>
                     <Input type="search" name="search" id="exampleSearch" value={this.state.Searchbar2} onChange={this.updateSearch2} placeholder="Searchbar2" />
                 </FormGroup>
                 This is the Homepage
             </Form>
-            <button onClick={this.handleClick}>
+            <button onClick={this.handleClick} className='button'>
                 Click me
             </button>
         </div>

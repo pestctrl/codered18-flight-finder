@@ -5,6 +5,19 @@
     height:1200px;
     background-image:url('https://cms.hostelworld.com/hwblog/wp-content/uploads/sites/2/2017/08/girlgoneabroad.jpg'); object-fit: cover;
 }
+
+.move{
+    display: flex;
+    flex-direction: column;
+    
+    position: absolute;
+    top: 180px;
+}
+
+.button{
+    position: absolute;
+}
+
 /* .background{
 height: 100%;
 width:100%;
