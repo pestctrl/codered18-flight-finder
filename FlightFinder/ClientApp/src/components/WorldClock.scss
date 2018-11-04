@@ -1,0 +1,165 @@
+SCSS  Babel Result
+EDIT ON
+ @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+$txtGrey: #CDD5C1;
+$dawn-1: #123352;
+$dawn-2: #1d5372;
+$dawn-3: #3885a2;
+$morning-1: #8dcdba;
+$morning-2: #eee07a;
+$morning-3: #f0eebc;
+$afternoon-1: #e6756f;
+$afternoon-2: #ee8049;
+$afternoon-3: #facf62;
+$evening-1: #291c6b;
+$evening-2: #4a257d;
+$evening-3: #884186;
+$night-1: #111642;
+$night-2: #011548;
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+html {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: $txtGrey;
+}
+body {
+  margin: 0;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-weight: lighter;
+  font-size: 40px;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.panels {
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  font-size: 20px;
+}
+
+.panel {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient($dawn-1, $dawn-2, $dawn-3);
+  border-right: 1px solid rgba($txtGrey, .3);
+  cursor: pointer;
+  transition:
+        font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        background 0.3s;
+  &.open {
+    flex: 4;
+    font-size: 30px;
+  }
+}
+
+.panel > * {
+  flex: 1 0 auto;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s;
+}
+.panel > *:first-child {
+  justify-content: flex-end;
+}
+.panel > *:last-child {
+  justify-content: flex-start;
+}
+
+.dawn {
+  background: linear-gradient($dawn-1, $dawn-2, $dawn-3);
+}
+.morning {
+  background: linear-gradient($morning-1, $morning-2, $morning-3);
+  color: #363c80;
+}
+.afternoon-1 {
+  background: linear-gradient($morning-3, $afternoon-1, $afternoon-2);
+  color: #fff;
+}
+.afternoon-2 {
+  background: linear-gradient($afternoon-2, $afternoon-3, $afternoon-1);
+  color: #fff;
+}
+.evening-1 {
+  background: linear-gradient($afternoon-3, $afternoon-1, $evening-3);
+  color: #fff;
+}
+.evening-2 {
+  background: linear-gradient($evening-1, $evening-2, $evening-3);
+  color: #9eaf81;
+}
+.night-1 {
+  background: linear-gradient($evening-3, $night-1, $night-2);
+}
+.night-2 {
+  background: linear-gradient($night-1, $dawn-2, $dawn-1);
+}
+
+.weather-icon i {
+  font-family: 'weathericons';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  font-size: 40px;
+  padding: 20px 0;
+  &.icon-01d:before {
+    content: '\f00d';
+  }
+  &.icon-01n:before {
+    content: '\f02e';
+  }
+  &.icon-02d:before {
+    content: '\f002';
+  }
+  &.icon-02n:before {
+    content: '\f086';
+  }
+  &.icon-03d:before,
+  &.icon-03n:before {
+    content: '\f041';
+  }
+  &.icon-04d:before,
+  &.icon-04n:before {
+    content: '\f013';
+  }
+  &.icon-09d:before,
+  &.icon-09n:before {
+    content: '\f017';
+  }
+  &.icon-10d:before {
+    content: '\f009';
+  }
+  &.icon-10n:before {
+    content: '\f029';
+  }
+  &.icon-11d:before,
+  &.icon-11n:before {
+    content: '\f01d';
+  }
+  &.icon-13d:before,
+  &.icon-13n:before {
+    content: '\f01d';
+  }
+  &.icon-50d:before,
+  &.icon-50n:before {
+    content: '\f01b';
+  }
+}

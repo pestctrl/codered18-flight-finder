@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-
+import WorldClock from './WorldClock';
+import ReactDOM from 'react-router-dom';
 export class Home extends Component {
   displayName = Home.name
 
   render() {
     return (
       <div>
+        <WorldClock />
         <h1>Hello, world!</h1>
         <p>Welcome to your new single-page application, built with:</p>
         <ul>
