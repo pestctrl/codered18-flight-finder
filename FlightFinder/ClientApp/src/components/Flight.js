@@ -10,7 +10,7 @@ export class Flight extends Component {
     this.state = {
       Searchbar: "",
       Searchbar2: "",
-      PassengerCount: ""
+      PassengerCount: 1
     };
 
     this.updateSearch1 = this.updateSearch1.bind(this);
@@ -22,7 +22,7 @@ export class Flight extends Component {
       "this is:",
       this.state.Searchbar,
       this.state.Searchbar2,
-      this.state.updatePassengerCount
+      this.state.PassengerCount
     );
   };
   updateSearch1(evt) {
@@ -36,6 +36,7 @@ export class Flight extends Component {
     });
   }
   updatePassengerCount(evt) {
+      console.log(evt.target.value);
     this.setState({
       PassengerCount: evt.target.value
     });
@@ -80,13 +81,13 @@ export class Flight extends Component {
               id="exampleSelect"
               value={this.state.PassengerCount}
               onChange={this.updatePassengerCount}
-            >
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
+             >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
             </Input>
           </FormGroup>
           {/* This is the Homepage */}
