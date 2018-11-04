@@ -26,10 +26,13 @@ def get_cheapest_flight(depart, arrive, date1, date2, num_ppl):
 
     uList = soup.find("ul", id="flightModuleList")
 
-    listItem = uList.findChild().find_next_sibling("li")
+    listItem = uList.findChild()
+    #listItem = uList.findChild().find_next_sibling("li")
 
+    #price = listItem.find_all("span")[11]
     price = listItem.find_all("span")[11].get_text()
 
+    #print(price)
     price = price[1:]
 
     targetSpan = listItem.find_all("span")[9]
@@ -46,13 +49,15 @@ def get_cheapest_flight(depart, arrive, date1, date2, num_ppl):
 
     arrivalLocation = arrivalLocation[206:]
 
+    thisdict =	{
+      "price": price,
+      "departure": departLocation,
+      "arrival": arrivalLocation
+    }
+
     driver.quit()
 
-    return {
-        "price": price,
-        "departure": departLocation,
-        "arrival": arrivalLocation
-    }
+    return thisdict
 
 if __name__ == "__main__":
     print(get_cheapest_flight("Houston","Atlanta","11/15/2018", "11/25/2018", 4))
