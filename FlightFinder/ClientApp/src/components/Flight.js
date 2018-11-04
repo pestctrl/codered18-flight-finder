@@ -17,7 +17,8 @@ export class Flight extends Component {
             Searchbar2: "",
             Geobar:"",
             PassengerCount: 1,
-            price: 0
+            price: 0,
+            link: ""
         };
         console.log("constructor");
 
@@ -37,14 +38,9 @@ export class Flight extends Component {
             this.state.PassengerCount
         );
 
-  handleClick = (evt) => {
-    console.log(
-      "this is:",
-      this.state.Searchbar,
-      this.state.Searchbar2,
-      this.state.Geobar,
-      this.state.PassengerCount
-    );
+        let formData = new FormData;
+        formData.append("start", this.state.Searchbar);
+        formData.append("end", this.state.Searchbar2);
 
         fetch('api/flights/getflights', {
             method: 'POST',
@@ -104,9 +100,8 @@ export class Flight extends Component {
         console.log(this.state);
         return (
             <div>
-              <div>{this.state.price}</div>
 
-              <Geosuggest className='geo'
+              {/* <Geosuggest className='geo'
                           ref={el=>this._geoSuggest=el}
             //   fixtures={fixtures}
                           type="search"
@@ -115,7 +110,7 @@ export class Flight extends Component {
                           value={this.state.Geobar}
                           onSuggestSelect={this.updateGeobar}
                           placeholder="Where are you leaving from..."
-              />
+              /> */}
         <Form className="box">
           <FormGroup className="move" className="col-md-8">
             <Label for="exampleSearch" className="label">
@@ -162,12 +157,15 @@ export class Flight extends Component {
               <option value="6">6</option>
             </Input>
           </FormGroup>
-          <div>{this.state.price}</div>
           {/* This is the Homepage */}
         </Form>
         {/* <button onClick={this.toggleButton} style="position: absolute; top: 200px;">
           {this.state.buttonOn ? 'ON' : 'OFF'}
         </button> */}
+        <div className='last'>
+          <div>Cost of Trip: ${this.state.price}</div>
+          <div>Link to Ticket: {this.state.link}</div>
+        </div>
         <button onClick={this.handleClick} className="button">
           Submit
         </button>

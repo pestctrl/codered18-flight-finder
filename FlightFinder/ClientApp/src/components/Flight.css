@@ -29,6 +29,23 @@
   color:lightcoral;
 }
 
+.last{
+position: absolute;
+/* font-size:400px;
+font-family:Helvetica-Neue, Helvetica, Arial, sans-serif;
+font-weight:400; */
+font-size:38px;
+font-family: Helvetica, Arial, Helvetica, sans-serif;
+padding: 100px;
+width:600px;
+opacity: .75;
+text-align: center;
+top: 400px;
+background-color: whitesmoke;
+border-radius: 8px;
+color:#333333;
+}
+
 .label{
     color:whitesmoke;
     font-size:20px;
