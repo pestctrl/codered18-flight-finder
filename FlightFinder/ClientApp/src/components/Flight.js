@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
 import Geosuggest from 'react-geosuggest';
-import {Counter} from './Counter';
 import Geocode from "react-geocode";
 
 import Searchbar from "./Searchbar";
@@ -91,7 +90,6 @@ export class Flight extends Component {
   render() {
     return (
       <div>
-          <Counter className='map'/>
         <Geosuggest className='geo'
               ref={el=>this._geoSuggest=el}
             //   fixtures={fixtures}
