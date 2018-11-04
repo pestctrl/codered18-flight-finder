@@ -48,6 +48,9 @@ export class Flight extends Component {
   }
   updateGeobar(evt) {
     console.log(evt);
+     this.setState({
+         Geobar: evt.target.value
+       });
   }
   render() {
     return (
