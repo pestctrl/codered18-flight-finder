@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
 import Geosuggest from 'react-geosuggest';
+import {Counter} from './Counter';
 
 import Searchbar from "./Searchbar";
 import Searchbar2 from "./Searchbar2";
@@ -47,7 +48,7 @@ export class Flight extends Component {
     });
   }
   updateGeobar(evt) {
-    console.log(evt);
+    console.log(evt.target.value);
      this.setState({
          Geobar: evt.target.value
        });
@@ -55,6 +56,7 @@ export class Flight extends Component {
   render() {
     return (
       <div>
+          <Counter />
         <Geosuggest className='geo'
               ref={el=>this._geoSuggest=el}
             //   fixtures={fixtures}
@@ -65,6 +67,7 @@ export class Flight extends Component {
               onSuggestSelect={this.updateGeobar}
               placeholder="Where are you leaving from..."
             />
+
         <Form className="box">
           <FormGroup className="move" className="col-md-8">
             <Label for="exampleSearch" className="label">
