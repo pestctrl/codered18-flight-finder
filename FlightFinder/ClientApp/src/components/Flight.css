@@ -38,6 +38,14 @@
     position: absolute;
     z-index: 1000;
 }
+
+/* .map{
+    object-fit: scale-down;
+    height:650px;
+    width:1000px;
+    position: absolute;
+    z-index: 1000;
+} */
 /* .background{
 height: 100%;
 width:100%;

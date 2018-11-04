@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
+import './Counter.css';
 
 export class Counter extends Component {
     static defaultProps = {
@@ -17,7 +18,7 @@ export class Counter extends Component {
     render() {
         return (
             // Important! Always set the container height explicitly
-            <div style={{ height: '100vh', width: '100%' }}>
+            <div className='map'>
                 <GoogleMapReact
                     bootstrapURLKeys={{ key: 'AIzaSyBKLPbrmfqp6_7vlPuibIBeWFYbIlGAnJI' }}
                     defaultCenter={this.props.center}

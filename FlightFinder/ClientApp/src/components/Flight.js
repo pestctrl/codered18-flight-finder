@@ -56,7 +56,7 @@ export class Flight extends Component {
   render() {
     return (
       <div>
-          <Counter />
+          <Counter className='map'/>
         <Geosuggest className='geo'
               ref={el=>this._geoSuggest=el}
             //   fixtures={fixtures}
