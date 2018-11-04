@@ -5,7 +5,7 @@
   height: 1200px;
   background-image: url("https://cms.hostelworld.com/hwblog/wp-content/uploads/sites/2/2017/08/girlgoneabroad.jpg");
   object-fit: cover;
-  padding-top:50px;
+  padding-top:40px;
 }
 
 .move {
@@ -18,7 +18,8 @@
 
 .button {
   position: absolute;
-  top: 200px;
+  top: 250px;
+  right: 1150px;
   border-radius: 8px;
   height: 40px;
   width: 10%;
@@ -26,12 +27,12 @@
   font-size: 18px;
   font-weight: bold;
   background-color: whitesmoke;
-  color:#373737;
+  color:lightcoral;
 }
 
 .label{
-    color:#373737;
-    font-size:18px;
+    color:whitesmoke;
+    font-size:20px;
 }
 /* .background{
 height: 100%;

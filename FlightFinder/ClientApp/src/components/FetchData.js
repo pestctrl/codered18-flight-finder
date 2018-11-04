@@ -49,7 +49,7 @@ export class FetchData extends Component {
       <div className='weather'>
         <p>Weather forecast</p>
         {/* <p>This component demonstrates fetching data from the server.</p> */}
-        <h1>Be prepared with the most accurate 5-day forecast for your destination with highs, lows, chance of precipitation from The Weather Channel and Weather.com.</h1>
+        <h1>Be prepared with the most accurate 5-day forecast for your destination with highs, lows, & chance of precipitation from The Weather Channel and Weather.com.</h1>
         {contents}
       </div>
     );
