@@ -6,8 +6,8 @@ export default class Searchbar extends React.Component {
       return (
         <Form>
           <FormGroup>
-            <Label for="exampleSearch">Start</Label>
-            <Input type="search" name="search" id="exampleSearch" placeholder="Searchbar1" />
+                  <Label for="exampleSearch">Start</Label>
+                  <Input type="search" name="search" id="exampleSearch" value={this.state.Searchbar} placeholder="Searchbar1" />
           </FormGroup>
         </Form>
       );
