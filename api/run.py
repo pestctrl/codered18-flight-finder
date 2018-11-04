@@ -4,11 +4,13 @@ app = Flask(__name__)
 
 @app.route('/', methods=["POST"])
 def hello_world():
-    return jsonify(get_cheapest_flight(request.form["depart"],
+    thisdict = get_cheapest_flight(request.form["depart"],
                                        request.form["arrive"],
                                        request.form["date1"],
                                        request.form["date2"],
-                                       int(request.form["num_ppl"])))
+                                       int(request.form["num_ppl"]))
+    print(thisdict)
+    return jsonify(thisdict)
 
 if __name__ == "__main__":
    app.run()
