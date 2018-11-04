@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './FetchData.css'
 
 export class FetchData extends Component {
   displayName = FetchData.name
@@ -45,9 +46,10 @@ export class FetchData extends Component {
       : FetchData.renderForecastsTable(this.state.forecasts);
 
     return (
-      <div>
-        <h1>Weather forecast</h1>
-        <p>This component demonstrates fetching data from the server.</p>
+      <div className='weather'>
+        <p>Weather forecast</p>
+        {/* <p>This component demonstrates fetching data from the server.</p> */}
+        <h1>Be prepared with the most accurate 5-day forecast for your destination with highs, lows, chance of precipitation from The Weather Channel and Weather.com.</h1>
         {contents}
       </div>
     );

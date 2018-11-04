@@ -1,0 +1,14 @@
+.weather{
+  position: absolute;
+  width: calc(113.5%);
+  right: -1.5px;
+  height: 1200px;
+  background-image: url("https://amayei.nyc3.digitaloceanspaces.com/2018/09/wea.jpg");
+  /* object-fit: cover; */
+  background-size: cover;
+  background-repeat:no-repeat;
+  font-weight: 900;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3.5rem;
+  padding-top:20px;
+}

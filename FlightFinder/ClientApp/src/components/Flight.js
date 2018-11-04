@@ -33,17 +33,17 @@ export class Flight extends Component {
         <div>
             <Form className='box'>
                 <FormGroup className='move' className='col-md-8'>
-                    <Label for="exampleSearch">Origin</Label>
-                    <Input type="search" name="search" id="exampleSearch" value={this.state.Searchbar} onChange={this.updateSearch1} placeholder="Searchbar1" />
+                    <Label for="exampleSearch" className='label'>Origin</Label>
+                    <Input type="search" name="search" id="exampleSearch" value={this.state.Searchbar} onChange={this.updateSearch1} placeholder="Where are you leaving from..." />
                 </FormGroup>
                 <FormGroup className='move' className='col-md-8'>
-                    <Label for="exampleSearch">Destination</Label>
-                    <Input type="search" name="search" id="exampleSearch" value={this.state.Searchbar2} onChange={this.updateSearch2} placeholder="Searchbar2" />
+                    <Label for="exampleSearch" className='label'>Destination</Label>
+                    <Input type="search" name="search" id="exampleSearch" value={this.state.Searchbar2} onChange={this.updateSearch2} placeholder="Where are you headed..." />
                 </FormGroup>
                 This is the Homepage
             </Form>
             <button onClick={this.handleClick} className='button'>
-                Click me
+                Submit
             </button>
         </div>
 
