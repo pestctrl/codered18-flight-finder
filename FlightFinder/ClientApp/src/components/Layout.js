@@ -21,14 +21,14 @@ export class Layout extends Component {
             ]
         };
 
-        this.onGetPoints = this.onGetPoints.bind(this)
+        this.onGetPoints = this.onGetPoints.bind(this);
         this.getPoints = this.getPoints.bind(this);
     }
 
     onGetPoints = (p) => {
         this.setState({ points: p });
         console.log(p);
-    };
+    }
 
     getPoints() {
         return this.state.points;

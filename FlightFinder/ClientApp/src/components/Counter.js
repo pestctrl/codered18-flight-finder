@@ -3,9 +3,7 @@ import GoogleMapReact from 'google-map-react';
 import './Counter.css';
 
 export class Counter extends Component {
-    static defaultProps = {
-    };
-
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -18,7 +16,7 @@ export class Counter extends Component {
                 lng: 30.33
             },
             zoom: 11
-        }
+        };
     }
 
     render() {
@@ -49,7 +47,7 @@ export class Counter extends Component {
     }
     renderPolylines(map, maps) {
         this.setState({ coord: this.props.getData() });
-        console.log(this.props.getData())
+        console.log(this.props.getData());
         const bounds = this.getMapBounds(map, maps, this.state.coord);
         // Fit map to bounds
         map.fitBounds(bounds);
