@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import Searchbar from './Searchbar';
-import Searchbar2 from './Searchbar2'
+import Searchbar2 from './Searchbar2';
 import './Flight.css';
 
 export class Flight extends Component {
@@ -17,6 +17,19 @@ export class Flight extends Component {
     }
     handleClick = () => {
         console.log('this is:', this.state.Searchbar, this.state.Searchbar2);
+        
+        var formData  = new FormData();
+        formData.append("start", this.state.Searchbar);
+        formData.append("end", this.state.Searchbar2);
+        
+        fetch('api/flights/getflights', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.message);
+            });
     }
     updateSearch1(evt) {
         this.setState({

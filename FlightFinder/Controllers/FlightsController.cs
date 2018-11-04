@@ -10,9 +10,14 @@ namespace FlightFinder.Controllers
     public class FlightsController : Controller
     {
         [HttpPost("[action]")]
-            public JsonResult GetFlights(string start, string end)
+        public JsonResult GetFlights(string start, string end)
         {
-            return Json(new { success = true, message= "Hello, " + start + " to " + end + "!"});
+            return Json(new {
+                    success = true,
+                    airports = new [] {"IAH", "ATL"},
+                    price=113,
+                    link="https://google.com"
+                });
         }
         
 
