@@ -31,7 +31,7 @@ export class Flight extends Component {
     render() {
     return ( 
         <div>
-            <Form>
+            <Form className='box'>
                 <FormGroup>
                     <Label for="exampleSearch">Start</Label>
                     <Input type="search" name="search" id="exampleSearch" value={this.state.Searchbar} onChange={this.updateSearch1} placeholder="Searchbar1" />
