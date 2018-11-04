@@ -3,16 +3,22 @@ import GoogleMapReact from 'google-map-react';
 
 export class Counter extends Component {
     static defaultProps = {
-        center: {
-            lat: 59.95,
-            lng: 30.33
-        },
-        coord: [
-            { lat: 53.42728, lng: -6.24357 },
-            { lat: 43.681583, lng: -79.61146 }
-        ],
-        zoom: 11
     };
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            coord: [
+                { lat: 53.42728, lng: -6.24357 },
+                { lat: 43.681583, lng: -79.61146 }
+            ],
+            center: {
+                lat: 59.95,
+                lng: 30.33
+            },
+            zoom: 11
+        }
+    }
 
     render() {
         return (
@@ -20,8 +26,8 @@ export class Counter extends Component {
             <div style={{ height: '100vh', width: '100%' }}>
                 <GoogleMapReact
                     bootstrapURLKeys={{ key: 'AIzaSyBKLPbrmfqp6_7vlPuibIBeWFYbIlGAnJI' }}
-                    defaultCenter={this.props.center}
-                    defaultZoom={this.props.zoom}
+                    defaultCenter={this.state.center}
+                    defaultZoom={this.state.zoom}
                     onGoogleApiLoaded={({ map, maps }) => this.renderPolylines(map, maps)}
                 >
                 </GoogleMapReact>
@@ -41,20 +47,22 @@ export class Counter extends Component {
         return bounds;
     }
     renderPolylines(map, maps) {
-        const bounds = this.getMapBounds(map, maps, this.props.coord);
+        this.setState({ coord: this.props.getData() });
+        console.log(this.props.getData())
+        const bounds = this.getMapBounds(map, maps, this.state.coord);
         // Fit map to bounds
         map.fitBounds(bounds);
 
         let geodesicPolyline = new maps.Polyline({
-            path: this.props.coord,
+            path: this.state.coord,
             geodesic: true,
             strokeColor: '#00a1e1',
             strokeOpacity: 1.0,
             strokeWeight: 4
         });
-        for (let i = 0; i < this.props.coord.length; i++) {
+        for (let i = 0; i < this.state.coord.length; i++) {
             var marker = new maps.Marker({
-                position: this.props.coord[i],
+                position: this.state.coord[i],
                 map: map,
                 title: 'Hello World!'
             });
