@@ -17,13 +17,16 @@ export class Flight extends Component {
             Searchbar: "",
             Searchbar2: "",
             Geobar:"",
-            PassengerCount: 1
+            PassengerCount: 1,
+            price: 0
         };
+        console.log("constructor");
 
         this.updateSearch1 = this.updateSearch1.bind(this);
         this.updateSearch2 = this.updateSearch2.bind(this);
         this.updateGeobar = this.updateGeobar.bind(this);
         this.updatePassengerCount = this.updatePassengerCount.bind(this);
+        this.updateValues = this.updateValues.bind(this);
     }
     
     handleClick = () => {
@@ -46,7 +49,6 @@ export class Flight extends Component {
             .then(response => response.json())
             .then(data => {
                 let points = new Array(data.airports.length);
-                console.log(data.airports);
                 for (let i = 0; i < data.airports.length; i++) {
                     Geocode.fromAddress(data.airports[i]).then(
                         response => {
@@ -62,38 +64,46 @@ export class Flight extends Component {
                     
                 }
 
-                // Somehow pass the points array to the controller
+                this.updateValues(data.price, data.link);
+                console.log("Hello");
+                console.log(this.state);
+
                 this.props.saveForm(points);
             });
 
-  }
-  updateSearch1(evt) {
-    this.setState({
-      Searchbar: evt.target.value
-    });
-  }
-  updateSearch2(evt) {
-    this.setState({
-      Searchbar2: evt.target.value
-    });
-  }
-  updatePassengerCount(evt) {
-      console.log(evt.target.value);
-    this.setState({
-      PassengerCount: evt.target.value
-    });
-  }
-  updateGeobar(evt) {
-    console.log(evt.target.value);
-     this.setState({
-         Geobar: evt.target.value
-       });
-  }
-  render() {
-    return (
-      <div>
-        <Geosuggest className='geo'
-              ref={el=>this._geoSuggest=el}
+    }
+    updateValues(p, l) {
+        this.setState({price: p, link: l});
+    }
+    updateSearch1(evt) {
+        this.setState({
+            Searchbar: evt.target.value
+        });
+    }
+    updateSearch2(evt) {
+        this.setState({
+            Searchbar2: evt.target.value
+        });
+    }
+    updatePassengerCount(evt) {
+        this.setState({
+            PassengerCount: evt.target.value
+        });
+    }
+    updateGeobar(evt) {
+        this.setState({
+            Geobar: evt.target.value
+        });
+    }
+    render() {
+        console.log("Rerender");
+        console.log(this.state);
+        return (
+            <div>
+              <div>{this.state.price}</div>
+
+              <Geosuggest className='geo'
+                          ref={el=>this._geoSuggest=el}
             //   fixtures={fixtures}
                           type="search"
                           name="search"

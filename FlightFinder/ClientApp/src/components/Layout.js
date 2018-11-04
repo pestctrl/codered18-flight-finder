@@ -26,9 +26,9 @@ export class Layout extends Component {
     }
 
     onGetPoints = (p) => {
-        this.setState({ points: p });
+        this.state.points = p;
         console.log(p);
-    }
+    };
 
     getPoints() {
         return this.state.points;
