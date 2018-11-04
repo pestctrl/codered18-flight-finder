@@ -51,8 +51,8 @@ def get_cheapest_flight(depart, arrive, date1, date2, num_ppl):
 
     thisdict =	{
       "price": price,
-      "departure": departLocation,
-      "arrival": arrivalLocation
+        "airports": [departLocation, arrivalLocation],
+        "link": "https://google.com"
     }
 
     driver.quit()
