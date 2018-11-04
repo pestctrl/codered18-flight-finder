@@ -1,6 +1,5 @@
 from selen_help import *
 from bs4 import BeautifulSoup
-import requests
 import html
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 
@@ -47,6 +46,8 @@ def get_cheapest_flight(depart, arrive, date1, date2, num_ppl):
 
     arrivalLocation = arrivalLocation[206:]
 
+    driver.quit()
+
     return {
         "price": price,
         "departure": departLocation,
@@ -54,5 +55,5 @@ def get_cheapest_flight(depart, arrive, date1, date2, num_ppl):
     }
 
 if __name__ == "__main__":
-    get_cheapest_flight("Houston","Atlanta","11/15/2018", "11/25/2018", 4)
+    print(get_cheapest_flight("Houston","Atlanta","11/15/2018", "11/25/2018", 4))
 
