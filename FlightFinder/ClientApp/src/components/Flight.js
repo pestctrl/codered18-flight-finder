@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
-import Geosuggest from 'react-geosuggest';
+import Geosuggest from "react-geosuggest";
 import Geocode from "react-geocode";
 
 import Searchbar from "./Searchbar";
 import Searchbar2 from "./Searchbar2";
 import "./Flight.css";
 Geocode.setApiKey("AIzaSyBKLPbrmfqp6_7vlPuibIBeWFYbIlGAnJI");
-
 
 export class Flight extends Component {
     
@@ -38,9 +37,14 @@ export class Flight extends Component {
             this.state.PassengerCount
         );
 
-        let formData = new FormData();
-        formData.append("start", this.state.Searchbar);
-        formData.append("end", this.state.Searchbar2);
+  handleClick = (evt) => {
+    console.log(
+      "this is:",
+      this.state.Searchbar,
+      this.state.Searchbar2,
+      this.state.Geobar,
+      this.state.PassengerCount
+    );
 
         fetch('api/flights/getflights', {
             method: 'POST',
@@ -112,59 +116,63 @@ export class Flight extends Component {
                           onSuggestSelect={this.updateGeobar}
                           placeholder="Where are you leaving from..."
               />
-
-              <Form className="box">
-                <FormGroup className="move" className="col-md-8">
-                  <Label for="exampleSearch" className="label">
-                    Origin
-                  </Label>
-                  <Input
-                    type="search"
-                    name="search"
-                    id="exampleSearch"
-                    value={this.state.Searchbar}
-                    onChange={this.updateSearch1}
-                    placeholder="Where are you leaving from..."
-                  />
-                </FormGroup>
-                <FormGroup className="move" className="col-md-8">
-                  <Label for="exampleSearch" className="label">
-                    Destination
-                  </Label>
-                  <Input
-                    type="search"
-                    name="search"
-                    id="exampleSearch"
-                    value={this.state.Searchbar2}
-                    onChange={this.updateSearch2}
-                    placeholder="Where are you headed..."
-                  />
-                </FormGroup>
-                <FormGroup className="move" className="col-md-8">
-                  <Label for="exampleSelect" className="label">
-                    Passengers
-                  </Label>
-                  <Input
-                    type="select"
-                    name="select"
-                    id="exampleSelect"
-                    value={this.state.PassengerCount}
-                    onChange={this.updatePassengerCount}
-                  >
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                  </Input>
-                </FormGroup>
-                {/* This is the Homepage */}
-              </Form>
-              <button onClick={this.handleClick} className="button">
-                Submit
-              </button>
-            </div>
-        );
-    }
+        <Form className="box">
+          <FormGroup className="move" className="col-md-8">
+            <Label for="exampleSearch" className="label">
+              Origin
+            </Label>
+            <Input
+              type="search"
+              name="search"
+              id="exampleSearch"
+              value={this.state.Searchbar}
+              onChange={this.updateSearch1}
+              placeholder="Where are you leaving from..."
+            />
+          </FormGroup>
+          <FormGroup className="move" className="col-md-8">
+            <Label for="exampleSearch" className="label">
+              Destination
+            </Label>
+            <Input
+              type="search"
+              name="search"
+              id="exampleSearch"
+              value={this.state.Searchbar2}
+              onChange={this.updateSearch2}
+              placeholder="Where are you headed..."
+            />
+          </FormGroup>
+          <FormGroup className="move" className="col-md-8">
+            <Label for="exampleSelect" className="label">
+              Passengers
+            </Label>
+            <Input
+              type="select"
+              name="select"
+              id="exampleSelect"
+              value={this.state.PassengerCount}
+              onChange={this.updatePassengerCount}
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </Input>
+          </FormGroup>
+          <div>{this.state.price}</div>
+          {/* This is the Homepage */}
+        </Form>
+        {/* <button onClick={this.toggleButton} style="position: absolute; top: 200px;">
+          {this.state.buttonOn ? 'ON' : 'OFF'}
+        </button> */}
+        <button onClick={this.handleClick} className="button">
+          Submit
+        </button>
+        
+      </div>
+    );
+  }
 }
