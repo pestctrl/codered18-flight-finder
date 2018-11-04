@@ -65,7 +65,6 @@ export class Flight extends Component {
               onSuggestSelect={this.updateGeobar}
               placeholder="Where are you leaving from..."
             />
-
         <Form className="box">
           <FormGroup className="move" className="col-md-8">
             <Label for="exampleSearch" className="label">
