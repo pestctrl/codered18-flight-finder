@@ -12,11 +12,13 @@ export class Flight extends Component {
     this.state = {
       Searchbar: "",
       Searchbar2: "",
+      Geobar:"",
       PassengerCount: 1
     };
 
     this.updateSearch1 = this.updateSearch1.bind(this);
     this.updateSearch2 = this.updateSearch2.bind(this);
+    this.updateGeobar = this.updateGeobar.bind(this);
     this.updatePassengerCount = this.updatePassengerCount.bind(this);
   }
   handleClick = () => {
@@ -24,6 +26,7 @@ export class Flight extends Component {
       "this is:",
       this.state.Searchbar,
       this.state.Searchbar2,
+      this.state.Geobar,
       this.state.PassengerCount
     );
   };
@@ -43,10 +46,22 @@ export class Flight extends Component {
       PassengerCount: evt.target.value
     });
   }
+  updateGeobar(evt) {
+    console.log(evt);
+  }
   render() {
     return (
       <div>
-        <Geosuggest className='geo'/>
+        <Geosuggest className='geo'
+              ref={el=>this._geoSuggest=el}
+            //   fixtures={fixtures}
+              type="search"
+              name="search"
+              id="exampleSearch"
+              value={this.state.Geobar}
+              onSuggestSelect={this.updateGeobar}
+              placeholder="Where are you leaving from..."
+            />
 
         <Form className="box">
           <FormGroup className="move" className="col-md-8">

@@ -11,7 +11,6 @@
 .move {
   display: flex;
   flex-direction: column;
-
   position: absolute;
   top: 180px;
 }
@@ -37,6 +36,7 @@
 
 .geo{
     position: absolute;
+    z-index: 1000;
 }
 /* .background{
 height: 100%;
