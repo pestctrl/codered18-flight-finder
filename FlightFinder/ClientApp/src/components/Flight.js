@@ -107,7 +107,7 @@ export class Flight extends Component {
     console.log(this.state);
     return (
       <div>
-        <Geosuggest
+        {/* <Geosuggest
           className="geo"
           // ref={el=>this._geoSuggest=el}
           //   fixtures={fixtures}
@@ -118,7 +118,7 @@ export class Flight extends Component {
           onChange={this.updateGeobar}
           onSuggestSelect={this.updateGeobar}
           placeholder="Where are you leaving from..."
-        />
+        /> */}
 
         <Form className="box">
           <FormGroup className="move" className="col-md-8">
