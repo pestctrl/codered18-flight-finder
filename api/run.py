@@ -9,7 +9,7 @@ def hello_world():
     #                                    request.form["date1"],
     #                                    request.form["date2"],
     #                                    int(request.form["num_ppl"]))
-    thisdict = return {
+    thisdict = {
         "price": price,
         "airports": ["IAH", "ATL"],
         "url": "https://google.com"
