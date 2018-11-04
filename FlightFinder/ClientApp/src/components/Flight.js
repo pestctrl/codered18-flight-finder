@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
+import Geosuggest from 'react-geosuggest';
+
 import Searchbar from "./Searchbar";
 import Searchbar2 from "./Searchbar2";
 import "./Flight.css";
@@ -44,6 +46,8 @@ export class Flight extends Component {
   render() {
     return (
       <div>
+        <Geosuggest className='geo'/>
+
         <Form className="box">
           <FormGroup className="move" className="col-md-8">
             <Label for="exampleSearch" className="label">
@@ -95,6 +99,7 @@ export class Flight extends Component {
         <button onClick={this.handleClick} className="button">
           Submit
         </button>
+        
       </div>
     );
   }

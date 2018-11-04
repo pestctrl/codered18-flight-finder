@@ -34,6 +34,10 @@
     color:whitesmoke;
     font-size:20px;
 }
+
+.geo{
+    position: absolute;
+}
 /* .background{
 height: 100%;
 width:100%;
