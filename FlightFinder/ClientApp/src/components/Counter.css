@@ -10,5 +10,6 @@
 
 body{
     /* background-color: #f4f4f4; */
-    background-color: #9099a2;
+    /* background-color: #9099a2; */
+    background: linear-gradient(#123352, #1d5372);
 }

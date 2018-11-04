@@ -20,12 +20,12 @@ export class NavMenu extends Component {
           <Nav>
             <LinkContainer to={'/'} exact>
               <NavItem>
-                <Glyphicon glyph='home' /> Home
+                <Glyphicon glyph='globe' /> World Clock
               </NavItem>
             </LinkContainer>
             <LinkContainer to={'/counter'}>
               <NavItem>
-                <Glyphicon glyph='education' /> Flight Route
+                <Glyphicon glyph='road' /> Flight Route
               </NavItem>
             </LinkContainer>
             <LinkContainer to={'/fetchdata'}>

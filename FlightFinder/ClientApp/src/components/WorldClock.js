@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import moment from 'moment-timezone';
-import './WorldClock.scss';
 import './WorldClock.css';
-import ReactDOM from 'react-router-dom';
+// import './WorldClock.scss';
+// import ReactDOM from 'react-router-dom';
 
 class WorldClock extends React.Component {
     constructor() {
