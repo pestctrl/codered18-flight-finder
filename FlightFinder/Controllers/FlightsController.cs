@@ -27,6 +27,7 @@ namespace FlightFinder.Controllers
                 var myHttpClient = new HttpClient();
                 var response = Task.Run(() => myHttpClient.PostAsync("http://35.231.94.254:5000/", formContent)).Result;
                 var content = Task.Run(() => response.Content.ReadAsStringAsync()).Result;
+                Console.WriteLine(content);
                 return new ContentResult
                 {
                     Content = content,
